@@ -1,0 +1,7 @@
+## Interface: 80300
+## Title: Hide and Seek
+## Author: HellowThar
+## Version: 1.0
+
+HereBeDragons\HereBeDragons-2.0.lua
+main.lua
