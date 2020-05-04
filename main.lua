@@ -42,6 +42,14 @@ local HASF = CreateFrame("FRAME", "HideAndSeekFrame", UIParent)
 HASF:SetSize(400,100)
 HASF:SetPoint("CENTER")
 HASF:SetMovable(true)
+HASF:EnableMouse(true)
+HASF:RegisterForDrag("LeftButton")
+HASF:SetScript("OnDragStart", HASF.StartMoving)
+HASF:SetScript("OnDragStop", HASF.StopMovingOrSizing)
+local tex = HASF:CreateTexture("ARTWORK")
+tex:SetAllPoints()
+tex:SetTexture(0.5, 0.5, 0)
+tex:SetAlpha(0.5)
 
 local function HasfHandler(arg)
     if arg == "help" then
@@ -63,10 +71,12 @@ StartButton:SetSize(100,33)
 StartButton:SetPoint("LEFT", HASF, "LEFT")
 StartButton:SetText("Start")
 StartButton:SetScript("OnClick", function(self, event, ...)
-    local distance = getDistance()
     HASF.OtherPlayer = UnitName("party1")
+    local distance = getDistance()
 
-    if distance < 0 then
+    if HASF.OtherPlayer == nil then
+        print("Must be in a party with other player to start the game!")
+    elseif distance < 0 then
         print("Must be in same zone to start the game!")
     else
         local success = C_ChatInfo.SendAddonMessage("hideandseek", "partner started game", "WHISPER", HASF.OtherPlayer)
