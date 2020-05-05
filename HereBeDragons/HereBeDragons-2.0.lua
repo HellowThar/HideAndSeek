@@ -3,7 +3,7 @@
 local MAJOR, MINOR = "HereBeDragons-2.0", 14
 assert(LibStub, MAJOR .. " requires LibStub")
 
-HereBeDragons, oldversion = LibStub:NewLibrary(MAJOR, MINOR)
+local HereBeDragons, oldversion = LibStub:NewLibrary(MAJOR, MINOR)
 if not HereBeDragons then return end
 
 local CBH = LibStub("CallbackHandler-1.0")

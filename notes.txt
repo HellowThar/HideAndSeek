@@ -1,4 +1,0 @@
-Event handler
-    - add "invite"
-    - add "marco" / "polo"
-    - add "accept"
