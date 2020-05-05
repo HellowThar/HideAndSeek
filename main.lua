@@ -2,7 +2,7 @@ local HBD = LibStub("HereBeDragons-2.0")
 
 --helper functions
 local function split(s, delimiter)
-    result = {};
+    local result = {};
     for match in (s..delimiter):gmatch("(.-)"..delimiter) do
         table.insert(result, match);
     end
