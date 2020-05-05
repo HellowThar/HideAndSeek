@@ -76,10 +76,10 @@ local function HasfHandler(arg)
     end
 end
 
-local SLASH_HAS1 = '/hideandseek'
-local SLASH_HAS2 = '/has'
+local SLASH_HIDE_AND_SEEK1 = '/hideandseek'
+local SLASH_HIDE_AND_SEEK2 = '/has'
 
-SlashCmdList["HAS"] = HasfHandler
+SlashCmdList["HIDE_AND_SEEK"] = HasfHandler
 
 local StartButton = CreateFrame("Button", "StartButton", HASF, "UIPanelButtonTemplate")
 StartButton:SetSize(100,33)
